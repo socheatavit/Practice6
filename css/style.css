@@ -5,6 +5,92 @@
     font-family: sans-serif;
 }
 
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+}
+
+html[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f0f0f0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+header,
+.navbar {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+html[data-theme="dark"] header,
+html[data-theme="dark"] .navbar,
+html[data-theme="dark"] .about,
+html[data-theme="dark"] .project,
+html[data-theme="dark"] .link,
+html[data-theme="dark"] .skill,
+html[data-theme="dark"] .level-area,
+html[data-theme="dark"] .testimonials,
+html[data-theme="dark"] .education,
+html[data-theme="dark"] .languages {
+    background-color: #1E2124;
+    color: var(--text-color);
+}
+
+html[data-theme="dark"] .project .detail-area .image-detail img,
+html[data-theme="dark"] .testimonials,
+html[data-theme="dark"] .level-area,
+html[data-theme="dark"] .languages,
+html[data-theme="dark"] .education {
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .link span i,
+html[data-theme="dark"] .link span,
+html[data-theme="dark"] .link a i,
+html[data-theme="dark"] .project .detail-area,
+html[data-theme="dark"] .skill h1,
+html[data-theme="dark"] .testimonials h1,
+html[data-theme="dark"] .testimonials span:first-child,
+html[data-theme="dark"] .testimonials .text1,
+html[data-theme="dark"] .languages h1,
+html[data-theme="dark"] .languages h4,
+html[data-theme="dark"] .education h1,
+html[data-theme="dark"] .education h4 {
+    color: #fff;
+}
+
+html[data-theme="dark"] .detail-area .image-detail {
+    box-shadow: none;
+}
+
+button[data-theme-toggle] {
+    padding: 5px 10px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+html[data-theme="dark"] .project img {
+    filter: brightness(0.8);
+}
+
+html[data-theme="dark"] main {
+    background-color: #121212;
+    color: #fff;
+}
+
+html[data-theme="light"] .btn {
+    background-color: #eee;
+    color: #000;
+}
+
 .container {
     width: 90%;
     margin: auto;
@@ -42,12 +128,15 @@ header {
     color: #fff;
 }
 
-.navbar .contact .navbar-nav {
-    list-style-type: none;
+.navbar .contact button {
+    margin-bottom: 20px;
+    border: none;
+    cursor: pointer;
+
 }
 
-.navbar .contact .navbar-nav .nav-item {
-    padding: 15px;
+.navbar .contact .navbar-nav {
+    list-style-type: none;
 }
 
 .navbar .contact .navbar-nav .nav-item i {
@@ -62,7 +151,7 @@ header {
 
 .navbar .contact .navbar-nav .nav-link.active {
     background-color: #54BA4E;
-    padding: 10px 20px;
+    padding: 5px 10px;
     color: #fff;
     border-radius: 5px;
     font-size: 20px;
@@ -152,18 +241,24 @@ main {
 .project .detail-area {
     margin-top: 20px;
     display: flex;
-    height: 150px;
+    height: 160px;
     color: #6f7475;
 }
 
 .project .detail-area .detail {
     margin-left: 30px;
 }
-.project .detail-area .detail h2{
+
+.project .detail-area .detail .find {
+    color: #53ba4ed7;
+    font-size: 13px;
+}
+
+.project .detail-area .detail h2 {
     font-size: 20px;
 }
 
-.project .detail-area .image-detail img {
+.project .detail-area .detail .project .detail-area .image-detail img {
     border-radius: 10px;
     box-shadow: 5px 5px 10px #DAE3E7;
 }
